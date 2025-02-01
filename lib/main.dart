@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fullstackfranz_flutter_app/core/global_variables.dart';
 import 'package:fullstackfranz_flutter_app/routes/app_router.dart';
 
 void main() {
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    GlobalVariables.screenSize = MediaQuery.of(context).size;
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(

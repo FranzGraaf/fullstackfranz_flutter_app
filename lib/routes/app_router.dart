@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:fullstackfranz_flutter_app/pages/page1.dart';
-import 'package:fullstackfranz_flutter_app/pages/page2.dart';
+import 'package:fullstackfranz_flutter_app/pages/landing_page.dart';
+import 'package:fullstackfranz_flutter_app/pages/sliver_list_page/sliver_list_page.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
-      case Page1.route:
+      case LandingPage.route:
         return CustomPageRoute1(
-          child: const Page1(),
+          child: const LandingPage(),
         );
-      case Page2.route:
+      case SliverListPage.route:
         return CustomPageRoute1(
-          child: const Page2(),
+          child: const SliverListPage(),
         );
 
       default:
         return CustomPageRoute1(
-          child: const Page1(),
+          child: const LandingPage(),
         );
     }
   }
