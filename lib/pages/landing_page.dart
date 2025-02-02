@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fullstackfranz_flutter_app/pages/parallax_effect_page/parallax_effect_page.dart';
 import 'package:fullstackfranz_flutter_app/pages/sliver_list_page/sliver_list_page.dart';
 
 class LandingPage extends StatelessWidget {
@@ -31,6 +32,12 @@ class LandingPage extends StatelessWidget {
                       Navigator.of(context).pushNamed(SliverListPage.route);
                     },
                     child: const Text("Sliver List"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(ParallaxEffectPage.route);
+                    },
+                    child: const Text("Parallax Effect"),
                   ),
                 ],
               ),
