@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     GlobalVariables.screenSize = MediaQuery.of(context).size;
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.deepPurple,
