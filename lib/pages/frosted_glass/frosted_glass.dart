@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:fullstackfranz_flutter_app/core/widgets/back_header_1.dart';
 
 class FrostedGlass extends StatelessWidget {
   static const route = "/frostedglass";
@@ -9,43 +10,52 @@ class FrostedGlass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double borderRadius = 50;
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Colors.blueAccent,
-            Colors.greenAccent,
-          ],
-        ),
-      ),
-      child: Stack(
+    return SafeArea(
+      child: Column(
         children: [
-          const RotatingCircles(),
-          Center(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(borderRadius),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                child: Container(
-                  width: 250,
-                  height: 250,
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.4),
-                  ),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    "Frosted Glass",
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.black,
-                    ),
-                  ),
+          const BackHeader1(),
+          Expanded(
+            child: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.blueAccent,
+                    Colors.greenAccent,
+                  ],
                 ),
               ),
+              child: Stack(
+                children: [
+                  const RotatingCircles(),
+                  Center(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(borderRadius),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                        child: Container(
+                          width: 250,
+                          height: 250,
+                          decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.4),
+                          ),
+                          alignment: Alignment.center,
+                          child: const Text(
+                            "Frosted Glass",
+                            style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
-          )
+          ),
         ],
       ),
     );

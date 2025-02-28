@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fullstackfranz_flutter_app/pages/frosted_glass/frosted_glass.dart';
+import 'package:fullstackfranz_flutter_app/pages/glow_effect/glow_effect.dart';
 import 'package:fullstackfranz_flutter_app/pages/landing_page.dart';
 import 'package:fullstackfranz_flutter_app/pages/parallax_effect_page/parallax_effect_page.dart';
 import 'package:fullstackfranz_flutter_app/pages/sliver_list_page/sliver_list_page.dart';
@@ -22,6 +23,10 @@ class AppRouter {
       case FrostedGlass.route:
         return CustomPageRoute1(
           child: const FrostedGlass(),
+        );
+      case GlowEffect.route:
+        return CustomPageRoute1(
+          child: const GlowEffect(),
         );
       default:
         return CustomPageRoute1(

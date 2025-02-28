@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fullstackfranz_flutter_app/pages/frosted_glass/frosted_glass.dart';
+import 'package:fullstackfranz_flutter_app/pages/glow_effect/glow_effect.dart';
 import 'package:fullstackfranz_flutter_app/pages/parallax_effect_page/parallax_effect_page.dart';
 import 'package:fullstackfranz_flutter_app/pages/sliver_list_page/sliver_list_page.dart';
 
@@ -28,6 +29,12 @@ class LandingPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(GlowEffect.route);
+                    },
+                    child: const Text("Glow Effect"),
+                  ),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).pushNamed(FrostedGlass.route);
