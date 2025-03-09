@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fullstackfranz_flutter_app/core/widgets/back_header_1.dart';
 
 class GlowEffect extends StatefulWidget {
   static const route = "/gloweffect";
@@ -40,46 +41,55 @@ class _GlowEffectState extends State<GlowEffect>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // just the background
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Colors.black,
-            Colors.black87,
-          ],
-        ),
-      ),
-      alignment: Alignment.center,
-      child: AnimatedBuilder(
-        animation: _colorAnimationController,
-        builder: (context, child) {
-          return Container(
-            width: 250,
-            height: 250,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(50),
-              boxShadow: [
-                BoxShadow(
-                  color: _colorTween.value!,
-                  blurRadius: 20,
-                  spreadRadius: 20,
+    return SafeArea(
+      child: Column(
+        children: [
+          const BackHeader1(),
+          Expanded(
+            child: Container(
+              // just the background
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.black,
+                    Colors.black87,
+                  ],
                 ),
-              ],
-            ),
-            alignment: Alignment.center,
-            child: Text(
-              "Glow Effect",
-              style: TextStyle(
-                fontSize: 24,
-                color: _colorTween.value,
+              ),
+              alignment: Alignment.center,
+              child: AnimatedBuilder(
+                animation: _colorAnimationController,
+                builder: (context, child) {
+                  return Container(
+                    width: 250,
+                    height: 250,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(50),
+                      boxShadow: [
+                        BoxShadow(
+                          color: _colorTween.value!,
+                          blurRadius: 20,
+                          spreadRadius: 20,
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Glow Effect",
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: _colorTween.value,
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
-          );
-        },
+          ),
+        ],
       ),
     );
   }
